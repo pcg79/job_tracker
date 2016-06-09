@@ -21,9 +21,12 @@ class JobsController < ApplicationController
 
   def update
     @job = Job.find params[:id]
+    @job.state = params[:new_state]
 
     if @job.save
+      head :ok
     else
+      render text: @job.errors.full_messages.join(". "), status: 422
     end
   end
 end
