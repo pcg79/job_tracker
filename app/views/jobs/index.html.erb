@@ -1,2 +1,8 @@
 <h1>Jobs#index</h1>
 <p>Find me in app/views/jobs/index.html.erb</p>
+
+<%= render partial: 'column', locals: { state: 'resume_submitted' } %>
+
+<%= render partial: 'column', locals: { state: 'recruiter_contacted' } %>
+
+<%= render partial: 'column', locals: { state: 'initial_interviews' } %>

@@ -1,0 +1,9 @@
+<div class="column" id="<%= state %>">
+  <%- if @jobs[state] -%>
+    <%- @jobs[state].each do |job| -%>
+      <div class="job" id="job_<%= job.id %>">
+        <%= job.title %>
+      </div>
+      <%- end -%>
+  <%- end -%>
+</div>
