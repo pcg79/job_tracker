@@ -5,6 +5,8 @@ class CreateJobs < ActiveRecord::Migration
       t.string :referral
       t.text :cover_letter
 
+      t.references :company, foreign_key: true
+
       t.timestamps null: false
     end
   end
