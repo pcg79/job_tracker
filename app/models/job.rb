@@ -3,6 +3,12 @@ class Job < ActiveRecord::Base
   belongs_to :company
 
   state_machine :initial => :resume_submitted do
-  end
+    event :move_forward do
+      transition resume_submitted: :recruiter_contacted, recruiter_contacted: :initial_interviews, initial_interviews: :on_site_interviews
+    end
 
+    event :reject do
+      transition all => :rejected
+    end
+  end
 end
