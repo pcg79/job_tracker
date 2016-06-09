@@ -30,7 +30,14 @@ div.hovered {
   background: #aaa;
 }
 
-div.custom-state-active
-{
+div.custom-state-active {
   background: #eee;
+}
+
+div#flash.error {
+  color: red;
+}
+
+div#flash.notice {
+  color: green;
 }
