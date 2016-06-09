@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   def index
-    @jobs = Job.where('').group(:state)
+    @jobs = Job.where('').group_by(&:state)
   end
 
   def new
