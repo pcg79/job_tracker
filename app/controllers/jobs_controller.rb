@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   def index
     @jobs = Job.where('').group_by(&:state)
+    @columns = ['resume_submitted', 'recruiter_contacted', 'initial_interviews', 'code_challenge', 'on_site_interviews', 'salary_negotiation', 'rejected']
   end
 
   def new
