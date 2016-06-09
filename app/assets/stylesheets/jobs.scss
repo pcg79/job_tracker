@@ -2,7 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.column {
+div.column-wrapper {
   float: left;
   padding: 1em;
+}
+
+div.column-header {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding-bottom: 1em;
+}
+
+div.column {
+  min-width: 10em;
+  min-height: 5em;
+}
+
+div.job {
+  cursor: pointer;
+}
+
+div.job p {
+  margin-top: 0em;
+}
+
+div.hovered {
+  background: #aaa;
+}
+
+div.custom-state-active
+{
+  background: #eee;
 }

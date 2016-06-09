@@ -1,9 +1,18 @@
-<div class="column" id="<%= state %>">
-  <%- if @jobs[state] -%>
-    <%- @jobs[state].each do |job| -%>
-      <div class="job" id="job_<%= job.id %>">
-        <%= job.title %>
-      </div>
-      <%- end -%>
-  <%- end -%>
+<div class="column-wrapper">
+  <div class="column-header">
+    <%= friendly_state(state) %>
+  </div>
+  <div class="column ui-widget-content" id="<%= state %>">
+    <%- if @jobs[state] -%>
+      <%- @jobs[state].each do |job| -%>
+        <div class="job" id="job_<%= job.id %>">
+          <p>
+            <%= job.company.name %>
+            </br>
+            <%= job.title %>
+          </p>
+        </div>
+        <%- end -%>
+    <%- end -%>
+  </div>
 </div>
