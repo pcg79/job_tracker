@@ -9,7 +9,7 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.new params[:job]
+    @job = Job.new job_params
 
     if @job.save
     else
@@ -29,5 +29,13 @@ class JobsController < ApplicationController
     else
       render text: @job.errors.full_messages.join(". "), status: 422
     end
+  end
+
+  private
+
+  def job_params
+    params.require(:job).permit(
+      :title, :company_id, :referral, :cover_letter
+    )
   end
 end
