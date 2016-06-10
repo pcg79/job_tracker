@@ -12,6 +12,9 @@ class JobsController < ApplicationController
     @job = Job.new job_params
 
     if @job.save
+      respond_to do |format|
+        format.js
+      end
     else
     end
   end
