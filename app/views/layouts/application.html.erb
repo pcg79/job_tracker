@@ -8,10 +8,17 @@
 </head>
 <body>
 
-<h1>Job Statuses</h1>
+<div id="header">
+  <h1>Job Statuses</h1>
+  <div>
+    <%= link_to "New Job", new_job_path, id: "new_job" %>
+  </div>
+</div>
+
 
 <div id='flash'>
 </div>
+
 
 <%= yield %>
 

@@ -15,3 +15,24 @@
 //= require jquery-ui.min
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $('#new_job').click(function(e) {
+    e.preventDefault();
+    var url = $(this).attr('href');
+    var dialog_form = $('<div id="dialog-form">Loading form...</div>').dialog({
+      autoOpen: false,
+      draggable: false,
+      resizable: false,
+      width: 520,
+      modal: true,
+      open: function() {
+        return $(this).load(url + '.js');
+      },
+      close: function() {
+        return $('#dialog-form').remove();
+      }
+    });
+    dialog_form.dialog('open');
+  });
+});
