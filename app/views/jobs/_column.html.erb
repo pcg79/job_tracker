@@ -1,0 +1,10 @@
+<div class="column-wrapper">
+  <div class="column-header">
+    <%= friendly_state(state) %>
+  </div>
+  <div class="column ui-widget-content" id="<%= state %>">
+    <%- if @jobs[state] -%>
+      <%= render partial: 'job', collection: @jobs[state] %>
+    <%- end -%>
+  </div>
+</div>

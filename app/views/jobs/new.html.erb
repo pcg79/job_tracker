@@ -1,0 +1,25 @@
+<%= form_for :job, url: jobs_path, remote: true do |f| %>
+  <p>
+    <%= f.label :company %><br>
+    <%= f.collection_select :company_id, Company.all, :id, :name %>
+  </p>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :referral %><br>
+    <%= f.text_field :referral %>
+  </p>
+
+  <p>
+    <%= f.label :cover_letter %><br>
+    <%= f.text_area :cover_letter %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

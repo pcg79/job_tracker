@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JobTracker</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="header">
+  <h1>Job Statuses</h1>
+  <div>
+    <%= link_to "New Job", new_job_path, id: "new_job" %>
+    <%= link_to "New Company", new_company_path, id: "new_company" %>
+  </div>
+</div>
+
+
+<div id='flash'>
+</div>
+
+
+<%= yield %>
+
+</body>
+</html>

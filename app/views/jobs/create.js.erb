@@ -1,0 +1,3 @@
+$('#dialog-form').dialog('close');
+$column = $("#<%= @job.state %>");
+$("<%= escape_javascript(render @job) %>").appendTo($column).hide().fadeIn("slow");
