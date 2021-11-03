@@ -7,10 +7,9 @@ class CompaniesController < ApplicationController
     @company = Company.new company_params
 
     if @company.save
-      respond_to do |format|
-        redirect_to :root
-      end
+      redirect_to :root
     else
+      render :new
     end
   end
 

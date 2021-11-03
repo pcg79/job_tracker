@@ -4,13 +4,15 @@ const webpack = require('webpack')
 environment.plugins.prepend('Provide',
   new webpack.ProvidePlugin({
     $: 'jquery',
-    jQuery: 'jquery'
+    jQuery: 'jquery',
+    jquery: 'jquery',
+    'window.jQuery': 'jquery',
   })
-)
+);
 
 const aliasConfig = {
-    'jquery': 'jquery-ui-dist/external/jquery/jquery.js',
-    'jquery-ui': 'jquery-ui-dist/jquery-ui.js'
+  'jquery': 'jquery-ui-dist/external/jquery/jquery.js',
+  'jquery-ui': 'jquery-ui-dist/jquery-ui.js'
 };
 
 environment.config.set('resolve.alias', aliasConfig);

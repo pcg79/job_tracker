@@ -1,5 +1,3 @@
-console.log("here");
-
 $(function() {
   $('#new_job').click(function(e) {
     e.preventDefault();
